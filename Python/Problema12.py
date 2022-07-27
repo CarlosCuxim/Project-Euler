@@ -58,8 +58,6 @@ def NumOfDivisors(n):
     
     return C
 
-
-
 # Obtiene el primer número triangular con más de n divisores
 def FirstTriangular(n):
     m = 1
@@ -68,6 +66,7 @@ def FirstTriangular(n):
         m+=1
         T = nthTriangular(m)
     return T
+
 
 n = 500
 
