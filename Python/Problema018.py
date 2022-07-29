@@ -37,15 +37,14 @@
 Moves = ["L", "R"]
 
 def ListPermutations(L, k):
-    if k ==1:
-        return L
-    else:
-        oldP = ListPermutations(L, k-1)
-        newP = []
-        for p in oldP:
-            for i in L:
-                newP.append(p+i)
-        return newP
+    d = len(L)
+    for i in range(d**k):
+        p = ""
+        while i>0:
+            p = L[i%d] + p
+            i = i//d
+        p = L[0]*(k-len(p)) + p
+        yield p
 
 # Función que suma un camino actual
 def SumPath(M, Path):
