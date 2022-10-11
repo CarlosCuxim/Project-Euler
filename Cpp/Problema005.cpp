@@ -12,16 +12,16 @@
 long mcd(long a, long b);
 long mcm(long a, long b);
 
-int main(){
+int main()
+{
 
     int n = 0;
     long M = 1;
     std::cout << "Escriba un número: ";
     std::cin >> n;
 
-    for(int i=1; i<=n; ++i){
+    for(int i=1; i<=n; ++i)
         M = mcm(M, i);
-    }
     
     std::cout << "El mínimo común múltiplo de los primeros " << n << " números es "
               << M << std::endl;
