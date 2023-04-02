@@ -1,4 +1,4 @@
-/* ========== Project Euler. Problem #6 ==========
+/* ================================== Project Euler. Problem #6 ====================================
 *
 * The sum of the squares of the first ten natural numbers is,
 *
@@ -14,7 +14,7 @@
 * Find the difference between the sum of the squares of the first one hundred natural numbers and the
 * square of the sum.
 *
-* -----------------------------------------------*/
+* ----------------------------------------------------------------------------------------------- */
 
 #include <iostream>
 
