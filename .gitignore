@@ -1,6 +1,7 @@
 # Directorios
 .vscode/
 Python/resources/
+Python/__pycache__
 
 # Archivos
 *.out
