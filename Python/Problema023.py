@@ -26,7 +26,8 @@ def d(n):
     S = 1
     for i in range(2,floor(n**0.5)+1):
         if n%i == 0:
-            S += i if i == n//i else i + n//i
+            d = n//i
+            S += i if i == d else i + d
             
     return S
 
@@ -35,12 +36,9 @@ def isAbundant(n):
 
 def GetListAbundant(n):
     L = []
-    print("Calculando: ", end="")
     for i in range(1,n):
-        print("\r" + f"Calculando: {i}", end="")
         if isAbundant(i):
             L.append(i)
-    print("")
     return L
 
 def isSumOfAbundant(n, L):
@@ -53,13 +51,19 @@ def isSumOfAbundant(n, L):
 
 def SumNoAbundant(n):
     L = GetListAbundant(n)
-    S = 0
-    print("Calculando: ", end="")
-    for i in range(1, n):
-        print("\r" + f"Calculando: {i}", end="")
-        if not isSumOfAbundant(i, L):
-            S += i
-    print("")
-    return S
+    
+    SumAbundant = []
+    for i in L:
+        for j in L:
+            s = i+j
+            if s<n:
+                SumAbundant.append(s)
+
+    NoAbundant = list(range(n))
+    for i in SumAbundant:
+        NoAbundant[i] = 0
+
+    return sum(NoAbundant)
+
 
 print(f"La suma de los números que no son suma de abundantes debajo de {Bound} es {SumNoAbundant(Bound)}")
