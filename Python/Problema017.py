@@ -1,4 +1,4 @@
-# ========== Project Euler. Problem #16 =========
+# ================================== Project Euler. Problem #16 ====================================
 
 # If the numbers 1 to 5 are written out in words: one, two, three, four, five, then there are
 # 3 + 3 + 5 + 4 + 4 = 19 letters used in total.
@@ -10,7 +10,7 @@
 # letters and 115 (one hundred and fifteen) contains 20 letters. The use of "and" when writing out
 # numbers is in compliance with British usage.
 
-# -----------------------------------------------
+# --------------------------------------------------------------------------------------------------
 
 # Nombres necesarios
 Names = {

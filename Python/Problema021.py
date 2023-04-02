@@ -1,4 +1,4 @@
-# ========== Project Euler. Problem #21 =========
+# ================================== Project Euler. Problem #21 ====================================
 
 # Let d(n) be defined as the sum of proper divisors of n (numbers less than n which divide evenly
 # into n).
@@ -10,7 +10,7 @@
 
 # Evaluate the sum of all the amicable numbers under 10000.
 
-# -----------------------------------------------
+# --------------------------------------------------------------------------------------------------
 
 def d(n):
     S = 0

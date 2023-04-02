@@ -1,4 +1,4 @@
-# ========== Project Euler. Problem #16 =========
+# ================================== Project Euler. Problem #16 ====================================
 
 # By starting at the top of the triangle below and moving to adjacent numbers on the row below, the
 # maximum total from top to bottom is 23.
@@ -32,7 +32,7 @@
 # However, Problem 67, is the same challenge with a triangle containing one-hundred rows; it cannot
 # be solved by brute force, and requires a clever method! ;o)
 
-# -----------------------------------------------
+# --------------------------------------------------------------------------------------------------
 
 Moves = ["L", "R"]
 

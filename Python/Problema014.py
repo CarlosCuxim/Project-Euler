@@ -1,4 +1,4 @@
-# ========== Project Euler. Problem #14 =========
+# ================================== Project Euler. Problem #14 ====================================
 
 # The following iterative sequence is defined for the set of positive integers:
 
@@ -15,7 +15,7 @@
 
 # NOTE: Once the chain starts the terms are allowed to go above one million.
 
-# -----------------------------------------------
+# --------------------------------------------------------------------------------------------------
 
 # Da el siguiente término de la secuencia de Collatz
 def Collatz(n):
