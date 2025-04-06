@@ -4,18 +4,36 @@
 //
 // Find the sum of all the multiples of 3 or 5 below 1000.
 
+use std::io;
+
 fn main() {
-    let limit: i64 = 1000;
-    let sum3: i64 = sum_multiples_below(3, limit);
-    let sum5: i64 = sum_multiples_below(5, limit);
-    let sum15: i64 = sum_multiples_below(15, limit);
-    let answer: i64 = sum3 + sum5 - sum15;
+    let limit: u64 = loop {
+        // User input number string
+        println!("Select the limit: ");
+        let mut limit = String::new();
+
+        io::stdin()
+            .read_line(&mut limit)
+            .expect("Failed to read line");
+        match limit.trim().parse() {
+            Ok(num) => break num,
+            Err(_) => {
+                println!("The input was not a number, please try again...");
+                continue;
+            }
+        };
+    };
+
+    let sum3: u64 = sum_multiples_below(3, limit);
+    let sum5: u64 = sum_multiples_below(5, limit);
+    let sum15: u64 = sum_multiples_below(15, limit);
+    let answer: u64 = sum3 + sum5 - sum15;
 
     println!("The sum of numbers below {limit} that are multiples of 5 and 3 is {answer}")
 }
 
-fn sum_multiples_below(n: i64, limit: i64) -> i64 {
-    let mut sum: i64 = 0;
+fn sum_multiples_below(n: u64, limit: u64) -> u64 {
+    let mut sum: u64 = 0;
     for a in 1..limit {
         if a % n == 0 {
             sum += a;
