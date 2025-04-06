@@ -4,8 +4,26 @@
 // By considering the terms in the Fibonacci sequence whose values do not
 // exceed four million, find the sum of the even-valued terms.
 
+use std::io;
+
 fn main() {
-    let limit = 4_000_000;
+    let limit = loop {
+        println!("Select a limit: ");
+
+        let mut input = String::new();
+        io::stdin()
+            .read_line(&mut input)
+            .expect("Failed reading the input");
+
+        match input.trim().parse() {
+            Ok(num) => break num,
+            Err(_) => {
+                println!("The input was not a number, try again...");
+                continue;
+            }
+        };
+    };
+
     let sum_fib = sum_fibbonacci(limit);
     println!("The sum of even fibbonacci number below {limit} is {sum_fib}");
 }

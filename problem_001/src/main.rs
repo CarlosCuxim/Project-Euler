@@ -10,12 +10,12 @@ fn main() {
     let limit: u64 = loop {
         // User input number string
         println!("Select the limit: ");
-        let mut limit = String::new();
+        let mut input = String::new();
 
         io::stdin()
-            .read_line(&mut limit)
+            .read_line(&mut input)
             .expect("Failed to read line");
-        match limit.trim().parse() {
+        match input.trim().parse() {
             Ok(num) => break num,
             Err(_) => {
                 println!("The input was not a number, please try again...");
