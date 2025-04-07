@@ -37,7 +37,7 @@ fn lcm(a: u64, b: u64) -> u64 {
 
 fn lcm_for_range(a: u64, b: u64) -> u64 {
     let mut r_lcm: u64 = 1;
-    for i in a..b {
+    for i in a..b + 1 {
         r_lcm = lcm(r_lcm, i);
     }
     r_lcm
