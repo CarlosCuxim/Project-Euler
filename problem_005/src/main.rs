@@ -16,22 +16,29 @@ fn main() {
 
     let limit: u64 = limit.trim().parse().expect("Failed to convert to a number");
 
-    let mcm = mcm_for_range(1, limit);
+    let r_lcm = lcm_for_range(1, limit);
 
-    println!("The mcm for 1 to {limit} is {mcm}")
+    println!("The mcm for 1 to {limit} is {r_lcm}")
 }
 
-fn mcm_for_range(a: u64, b: u64) -> u64 {
-    let mut mcm: u64 = 0;
-
-    'outer: loop {
-        mcm += 1;
-        for i in a..b {
-            if mcm % i != 0 {
-                continue 'outer;
-            }
-        }
-        break;
+fn gcd(mut a: u64, mut b: u64) -> u64 {
+    let mut r;
+    while b > 0 {
+        r = a % b;
+        a = b;
+        b = r;
     }
-    mcm
+    a
+}
+
+fn lcm(a: u64, b: u64) -> u64 {
+    a * b / gcd(a, b)
+}
+
+fn lcm_for_range(a: u64, b: u64) -> u64 {
+    let mut r_lcm: u64 = 1;
+    for i in a..b {
+        r_lcm = lcm(r_lcm, i);
+    }
+    r_lcm
 }
