@@ -6,6 +6,7 @@
 use std::io;
 
 fn main() {
+    println!("Type a integer");
     let mut n = String::new();
     io::stdin().read_line(&mut n).expect("Failed reading line");
     let n: u64 = n.trim().parse().expect("The input was not a number");
@@ -16,7 +17,8 @@ fn main() {
 }
 
 fn is_prime(n: u64) -> bool {
-    for p in 2..n {
+    let limit: u64 = (n as f64).sqrt() as u64 + 1;
+    for p in 2..limit {
         if n % p == 0 {
             return false;
         }
